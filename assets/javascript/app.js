@@ -83,7 +83,7 @@ var options = ["one", "two", "three", "four"];
 var startGame = $("#start-btn").on('click', function () {
     $(this).parent().hide();
     $(".container").show();
-    countdown(10);
+    countdown(90);
     questionsDisplay();
 });
 
