@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trivia Game Code</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" <link rel="stylesheet"
+        href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto+Mono:400,700"" rel=" stylesheet">
+</head>
+
+<body>
+
+    <div id="jumbotron">
+        <div class="text center">
+            <div class="col-md-12">
+                <img src="assets/images/guess-the-movie.png" class="img-fluid rounded mx-auto d-block shadow md" style="margin-top: 30px">
+                <h6><strong>The next page contains 10 iconic quotes from some of the <u>most beloved 80's movies.</u></strong></h6>
+                <p>Can you guess the film from these one-liners in less than 90 seconds?<br>Click start when you are
+                    ready. Good luck!</p>
+                <button id="start-btn" class="btn-lg">Start</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="col-md-12">
+            <header><img src="assets/images/header.png" class="img-fluid" id="header"></header>
+            <div class="row">
+                <div class="remainTime">Remaining Time:
+                    <div id="remain-time">90</div>
+                </div>
+            </div>
+
+            <div class="questions">
+                <button type="button" class="btn btn-primary black-background white" id="sub-btn">Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="answerScreen">
+        <h3>You made it<br> This is heavy!</h3>
+        <hr />
+        <h2 id="correctScreen">Correct Answers: </h2>
+        <h2 id="wrongScreen">Wrong Answers: </h2>
+    </div>
+
+    <div id="timeOut">
+        <h3>Your time is up!</h3>
+        <hr />
+        <h2 id="correcttimeOut">Correct Answers: </h2>
+        <h2 id="wrongtimeOut">Wrong Answers: </h2>
+    </div>
+
+    <script src="assets/javascript/app.js"></script>
+</body>
+
+</html>
