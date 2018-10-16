@@ -77,7 +77,7 @@ var questions = [{
 
 //The options variable will store the answers to the quotes
 var options = ["one", "two", "three", "four"];
-
+var conclusion = "";
 //The following 2 functions will work one after the other once the user clicks the start button.
 //The container will be positioned, the counter will start from 90, and the questionnaire will appear.
 var startGame = $("#start-btn").on('click', function () {
@@ -102,7 +102,6 @@ var questionsDisplay = function () {
     }
 }
 
-
 //This is the function for the countdown.
 //When the time runs out it will automatically make the container fade out and display a screen with the results.
 //It will count the number of right and wrong answers by looping through the correct array and the radio name
@@ -118,20 +117,32 @@ var countdown = function (seconds) {
             correct = 0;
             wrong = 0;
             unAnswered = 0;
+            conclusion = 0;
 
             for (var i = 0; i < 10; i++) {
 
                 if ($('input:radio[name="' + questions[i].name + '"]:checked').val() === questions[i].correct) {
 
                     correct++;
-                }
-                else {
+                } else {
                     wrong++;
                 };
             }
+            //Depending on the amount of correct answers it will display the comment below.
+            if (correct >= 0 && correct < 4) {
+                conclusion = "dude... seriously?";
+                unAnswered = 1;
+            } else if (correct >= 4 && correct < 8) {
+                conclusion = "ok, not so bad but you should probably watch them again...";
+                unAnswered = 2;
+            } else {
+                conclusion = "Alright alright. Learn it. Know it. Live it.";
+            }
+
             $("#correcttimeOut").append(correct);
             $("#wrongtimeOut").append(wrong);
             $("#timeOut").fadeIn(1000).show();
+            $("#timeOut").append(conclusion);
 
             clearInterval(timer);
             return;
@@ -142,7 +153,7 @@ var countdown = function (seconds) {
 
     $("#sub-btn").on("click", function () {
         clearInterval(timer);
-        
+
 
     })
 };
@@ -153,6 +164,7 @@ var gradeQuiz = $("#sub-btn").on("click", function () {
     correct = 0;
     wrong = 0;
     unAnswered = 0;
+    conclusion = "";
 
     for (var i = 0; i < 10; i++) {
 
@@ -164,11 +176,22 @@ var gradeQuiz = $("#sub-btn").on("click", function () {
         };
     };
 
+    if (correct >= 0 && correct < 4) {
+        conclusion = "dude... seriously?";
+        unAnswered = 1;
+    } else if (correct >= 4 && correct < 8) {
+        conclusion = "ok, not so bad but you should probably watch them again...";
+        unAnswered = 2;
+    } else {
+        conclusion = "Alright alright. Learn it. Know it. Live it.";
+    }
+
     countdown();
 
     $(".container").fadeOut(500);
     $("#answerScreen").show();
     $("#correctScreen").append(correct);
     $("#wrongScreen").append(wrong);
+    $("#answerScreen").append(conclusion);
 
 });
