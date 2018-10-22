@@ -3,6 +3,8 @@
 # Trivia Game
 This is a short movie trivia I did. I used JavaScript for the logic and jQuery to manipulate HTML.
 
+The quotes from the questionnaire come from some of the most popular 80's movies, which I grew up watching over and over up until today. So I decided to have some fun and to create this quiz and put in some of the skills I've been learning. Enjoy! 
+
 ## How this works
 * The game starts with a welcome screen with a short intro and displaying the instructions.
 * Once you click start, the questionnaire will be displayed and a 90 seconds counter will begin.
