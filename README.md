@@ -1,7 +1,7 @@
 ![alt text](https://raw.githubusercontent.com/edumoran/TriviaGAme/master/assets/images/guess-the-movie.png)
 
 # Trivia Game
-This is a movie trivia where I used JavaScript for the logic and jQuery to manipulate HTML.
+This is a short movie trivia I did. I used JavaScript for the logic and jQuery to manipulate HTML.
 
 ## How this works
 * The game starts with a welcome screen with a short intro and displaying the instructions.
